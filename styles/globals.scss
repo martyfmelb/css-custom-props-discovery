@@ -1,0 +1,64 @@
+html,
+body {
+  background: var(--base-background);
+  color: var(--base-text);
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.th-shaded {
+  background: var(--shade-background);
+}
+
+button,
+.btn--secondary {
+  font-family: inherit;
+  border-radius: calc(10px + 0.6em);
+  line-height: 1.2em;
+  padding: 9px 30px 11px;
+
+  border: 1px solid var(--button-secondary-border);
+  background: var(--button-secondary-background);
+  color: var(--button-secondary-text);
+
+  &:hover {
+    border: 1px solid var(--button-secondary-border-hover);
+    background: var(--button-secondary-background-hover);
+    color: var(--button-secondary-text-hover);
+  }
+
+  &:active {
+    border: 1px solid var(--button-secondary-border-press);
+    background: var(--button-secondary-background-press);
+    color: var(--button-secondary-text-press);
+  }
+}
+
+.btn--primary {
+  border: 1px solid var(--button-primary-border);
+  background: var(--button-primary-background);
+  color: var(--button-primary-text);
+
+  &:hover {
+    border: 1px solid var(--button-primary-border-hover);
+    background: var(--button-primary-background-hover);
+    color: var(--button-primary-text-hover);
+  }
+
+  &:active {
+    border: 1px solid var(--button-primary-border-press);
+    background: var(--button-primary-background-press);
+    color: var(--button-primary-text-press);
+  }
+}

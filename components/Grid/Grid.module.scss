@@ -1,0 +1,26 @@
+.grid {
+  display: grid;
+  width: 100%;
+
+  &.cols2 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  &.cols3 {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  &.cols4 {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  &.gapSmall {
+    grid-gap: 16px;
+  }
+}
+
+.cell {
+  background: var(--base-background);
+  color: var(--base-text);
+  border: 1px solid var(--base-border);
+}
