@@ -1,129 +1,259 @@
 @use "styles/modules/colours/variables" as *;
 
 .blackOnWhite {
-  --base-background: #{$white};
-  --shade-background: #{$black-haze};
-  --base-text: #{$mineshaft};
-  --base-text-light: #{$dove-gray};
-  --base-border: #{$dove-gray};
+  --base-background: var(--white);
+  --shade-background: var(--black-haze);
+  --base-text: var(--mineshaft);
+  --base-text-light: var(--dove-gray);
+  --base-border: var(--dove-gray);
 
-  --button-primary-border: #{$brand-primary};
-  --button-primary-background: #{$brand-primary};
-  --button-primary-text: #{$white};
+  --button-primary-border: var(--brand-primary);
+  --button-primary-background: var(--brand-primary);
+  --button-primary-text: var(--white);
 
-  --button-primary-border-hover: #{$brand-primary};
-  --button-primary-background-hover: #{adjust-color($brand-primary, $lightness: 20%)};
-  --button-primary-text-hover: #{$white};
+  --button-primary-border-hover: var(--brand-primary);
+  --button-primary-background-hover: var(--brand-primary-lighter);
+  --button-primary-text-hover: var(--white);
 
-  --button-primary-border-press: #{adjust-color($brand-primary, $lightness: -20%)};
-  --button-primary-background-press: #{adjust-color($brand-primary, $lightness: -20%)};
-  --button-primary-text-press: #{$white};
+  --button-primary-border-press: var(--brand-primary-darker);
+  --button-primary-background-press: var(--brand-primary-darker);
+  --button-primary-text-press: var(--white);
 
-  --button-secondary-border: #{$mineshaft};
-  --button-secondary-background: #{$mineshaft};
-  --button-secondary-text: #{$white};
+  --button-secondary-border: var(--mineshaft);
+  --button-secondary-background: var(--mineshaft);
+  --button-secondary-text: var(--white);
 
-  --button-secondary-border-hover: #{$mineshaft};
-  --button-secondary-background-hover: #{$tundora};
-  --button-secondary-text-hover: #{$white};
+  --button-secondary-border-hover: var(--mineshaft);
+  --button-secondary-background-hover: var(--tundora);
+  --button-secondary-text-hover: var(--white);
 
-  --button-secondary-border-press: #{$mineshaft};
-  --button-secondary-background-press: #{$mineshaft};
-  --button-secondary-text-press: #{$silver};
+  --button-secondary-border-press: var(--mineshaft);
+  --button-secondary-background-press: var(--mineshaft);
+  --button-secondary-text-press: var(--silver);
 }
 
 .whiteOnBlack {
-  --base-background: #{$mineshaft};
-  --shade-background: #{$tundora};
-  --base-text: #{$white};
-  --base-text-light: #{$dove-gray};
-  --base-border: #{$dove-gray};
+  --base-background: var(--mineshaft);
+  --shade-background: var(--tundora);
+  --base-text: var(--white);
+  --base-text-light: var(--dove-gray);
+  --base-border: var(--dove-gray);
 
-  --button-primary-border: #{$brand-primary};
-  --button-primary-background: #{$brand-primary};
-  --button-primary-text: #{$white};
+  --button-primary-border: var(--brand-primary);
+  --button-primary-background: var(--brand-primary);
+  --button-primary-text: var(--white);
 
-  --button-primary-border-hover: #{adjust-color($brand-primary, $lightness: 20%)};
-  --button-primary-background-hover: #{adjust-color($brand-primary, $lightness: 20%)};
-  --button-primary-text-hover: #{$white};
+  --button-primary-border-hover: var(--brand-primary-lighter);
+  --button-primary-background-hover: var(--brand-primary-lighter);
+  --button-primary-text-hover: var(--white);
 
-  --button-primary-border-press: #{adjust-color($brand-primary, $lightness: -20%)};
-  --button-primary-background-press: #{adjust-color($brand-primary, $lightness: -20%)};
-  --button-primary-text-press: #{$white};
+  --button-primary-border-press: var(--brand-primary-darker);
+  --button-primary-background-press: var(--brand-primary-darker);
+  --button-primary-text-press: var(--white);
 
-  --button-secondary-border: #{$white};
-  --button-secondary-background: #{$mineshaft};
-  --button-secondary-text: #{$white};
+  --button-secondary-border: var(--white);
+  --button-secondary-background: var(--mineshaft);
+  --button-secondary-text: var(--white);
 
-  --button-secondary-border-hover: #{$white};
-  --button-secondary-background-hover: #{$tundora};
-  --button-secondary-text-hover: #{$white};
+  --button-secondary-border-hover: var(--white);
+  --button-secondary-background-hover: var(--tundora);
+  --button-secondary-text-hover: var(--white);
 
-  --button-secondary-border-press: #{$silver};
-  --button-secondary-background-press: #{$mineshaft};
-  --button-secondary-text-press: #{$silver};
+  --button-secondary-border-press: var(--silver);
+  --button-secondary-background-press: var(--mineshaft);
+  --button-secondary-text-press: var(--silver);
 }
 
-.whiteOnRed {
-  --base-background: #{$brand-primary};
-  --shade-background: #{adjust-color($brand-primary, $lightness: 20%)};
-  --base-text: #{$white};
-  --base-text-light: #{mix($brand-primary, $white)};
-  --base-border: #{mix($brand-primary, $white)};
+.whiteOnBrandPrimary {
+  --base-background: var(--brand-primary);
+  --shade-background: var(--brand-primary-lighter);
+  --base-text: var(--white);
+  --base-text-light: var(--white-x-brand-primary);
+  --base-border: var(--white-x-brand-primary);
 
-  --button-primary-border: #{$white};
-  --button-primary-background: #{$brand-primary};
-  --button-primary-text: #{$white};
+  --button-primary-border: var(--white);
+  --button-primary-background: var(--brand-primary);
+  --button-primary-text: var(--white);
 
-  --button-primary-border-hover: #{$white};
-  --button-primary-background-hover: #{adjust-color($brand-primary, $lightness: 20%)};
-  --button-primary-text-hover: #{$white};
+  --button-primary-border-hover: var(--white);
+  --button-primary-background-hover: var(--brand-primary-lighter);
+  --button-primary-text-hover: var(--white);
 
-  --button-primary-border-press: #{$white};
-  --button-primary-background-press: #{adjust-color($brand-primary, $lightness: -20%)};
-  --button-primary-text-press: #{$white};
+  --button-primary-border-press: var(--white);
+  --button-primary-background-press: var(--brand-primary-darker);
+  --button-primary-text-press: var(--white);
 
-  --button-secondary-border: #{$white};
-  --button-secondary-background: #{$mineshaft};
-  --button-secondary-text: #{$white};
+  --button-secondary-border: var(--white);
+  --button-secondary-background: var(--mineshaft);
+  --button-secondary-text: var(--white);
 
-  --button-secondary-border-hover: #{$white};
-  --button-secondary-background-hover: #{$white};
-  --button-secondary-text-hover: #{$mineshaft};
+  --button-secondary-border-hover: var(--white);
+  --button-secondary-background-hover: var(--white);
+  --button-secondary-text-hover: var(--mineshaft);
 
-  --button-secondary-border-press: #{$silver};
-  --button-secondary-background-press: #{$silver};
-  --button-secondary-text-press: #{$mineshaft};
+  --button-secondary-border-press: var(--silver);
+  --button-secondary-background-press: var(--silver);
+  --button-secondary-text-press: var(--mineshaft);
 }
 
 .electricOnWhite {
-  --base-background: #{$electric-white};
-  --shade-background: #{$electric-black-haze};
-  --base-text: #{$electric-mineshaft};
-  --base-text-light: #{$electric-dove-gray};
-  --base-border: #{$electric-dove-gray};
+  --base-background: var(--electric-white);
+  --shade-background: var(--electric-black-haze);
+  --base-text: var(--electric-mineshaft);
+  --base-text-light: var(--electric-dove-gray);
+  --base-border: var(--electric-dove-gray);
 
-  --button-primary-border: #{$electric-brand-primary};
-  --button-primary-background: #{$electric-brand-primary};
-  --button-primary-text: #{$electric-white};
+  --button-primary-border: var(--electric-brand-primary);
+  --button-primary-background: var(--electric-brand-primary);
+  --button-primary-text: var(--electric-white);
 
-  --button-primary-border-hover: #{$electric-brand-primary};
-  --button-primary-background-hover: #{adjust-color($electric-brand-primary, $lightness: 20%)};
-  --button-primary-text-hover: #{$electric-white};
+  --button-primary-border-hover: var(--electric-brand-primary);
+  --button-primary-background-hover: var(--electric-brand-primary-lighter);
+  --button-primary-text-hover: var(--electric-white);
 
-  --button-primary-border-press: #{adjust-color($electric-brand-primary, $lightness: -20%)};
-  --button-primary-background-press: #{adjust-color($electric-brand-primary, $lightness: -20%)};
-  --button-primary-text-press: #{$electric-white};
+  --button-primary-border-press: var(--electric-brand-primary-darker);
+  --button-primary-background-press: var(--electric-brand-primary-darker);
+  --button-primary-text-press: var(--electric-white);
 
-  --button-secondary-border: #{$electric-mineshaft};
-  --button-secondary-background: #{$electric-mineshaft};
-  --button-secondary-text: #{$electric-white};
+  --button-secondary-border: var(--electric-mineshaft);
+  --button-secondary-background: var(--electric-mineshaft);
+  --button-secondary-text: var(--electric-white);
 
-  --button-secondary-border-hover: #{$electric-mineshaft};
-  --button-secondary-background-hover: #{$electric-tundora};
-  --button-secondary-text-hover: #{$electric-white};
+  --button-secondary-border-hover: var(--electric-mineshaft);
+  --button-secondary-background-hover: var(--electric-tundora);
+  --button-secondary-text-hover: var(--electric-white);
 
-  --button-secondary-border-press: #{$electric-mineshaft};
-  --button-secondary-background-press: #{$electric-mineshaft};
-  --button-secondary-text-press: #{$electric-silver};
+  --button-secondary-border-press: var(--electric-mineshaft);
+  --button-secondary-background-press: var(--electric-mineshaft);
+  --button-secondary-text-press: var(--electric-silver);
+}
+
+.darkMode {
+  .blackOnWhite {
+    --base-background: var(--mineshaft);
+    --shade-background: var(--tundora);
+    --base-text: var(--white);
+    --base-text-light: var(--dove-gray);
+    --base-border: var(--dove-gray);
+
+    --button-primary-border: var(--brand-primary);
+    --button-primary-background: var(--brand-primary);
+    --button-primary-text: var(--white);
+
+    --button-primary-border-hover: var(--brand-primary-lighter);
+    --button-primary-background-hover: var(--brand-primary-lighter);
+    --button-primary-text-hover: var(--white);
+
+    --button-primary-border-press: var(--brand-primary-darker);
+    --button-primary-background-press: var(--brand-primary-darker);
+    --button-primary-text-press: var(--white);
+
+    --button-secondary-border: var(--white);
+    --button-secondary-background: var(--mineshaft);
+    --button-secondary-text: var(--white);
+
+    --button-secondary-border-hover: var(--white);
+    --button-secondary-background-hover: var(--tundora);
+    --button-secondary-text-hover: var(--white);
+
+    --button-secondary-border-press: var(--silver);
+    --button-secondary-background-press: var(--mineshaft);
+    --button-secondary-text-press: var(--silver);
+  }
+
+  .whiteOnBlack {
+    --base-background: var(--white);
+    --shade-background: var(--black-haze);
+    --base-text: var(--mineshaft);
+    --base-text-light: var(--dove-gray);
+    --base-border: var(--dove-gray);
+
+    --button-primary-border: var(--brand-primary);
+    --button-primary-background: var(--brand-primary);
+    --button-primary-text: var(--white);
+
+    --button-primary-border-hover: var(--brand-primary);
+    --button-primary-background-hover: var(--brand-primary-lighter);
+    --button-primary-text-hover: var(--white);
+
+    --button-primary-border-press: var(--brand-primary-darker);
+    --button-primary-background-press: var(--brand-primary-darker);
+    --button-primary-text-press: var(--white);
+
+    --button-secondary-border: var(--mineshaft);
+    --button-secondary-background: var(--mineshaft);
+    --button-secondary-text: var(--white);
+
+    --button-secondary-border-hover: var(--mineshaft);
+    --button-secondary-background-hover: var(--tundora);
+    --button-secondary-text-hover: var(--white);
+
+    --button-secondary-border-press: var(--mineshaft);
+    --button-secondary-background-press: var(--mineshaft);
+    --button-secondary-text-press: var(--silver);
+  }
+
+  .whiteOnBrandPrimary {
+    --base-background: var(--brand-primary-darker);
+    --shade-background: var(--brand-primary);
+    --base-text: var(--white);
+    --base-text-light: var(--white-x-brand-primary);
+    --base-border: var(--white-x-brand-primary);
+
+    --button-primary-border: var(--white);
+    --button-primary-background: var(--brand-primary);
+    --button-primary-text: var(--white);
+
+    --button-primary-border-hover: var(--white);
+    --button-primary-background-hover: var(--brand-primary-lighter);
+    --button-primary-text-hover: var(--white);
+
+    --button-primary-border-press: var(--white);
+    --button-primary-background-press: var(--brand-primary-darker);
+    --button-primary-text-press: var(--white);
+
+    --button-secondary-border: var(--white);
+    --button-secondary-background: var(--mineshaft);
+    --button-secondary-text: var(--white);
+
+    --button-secondary-border-hover: var(--white);
+    --button-secondary-background-hover: var(--white);
+    --button-secondary-text-hover: var(--mineshaft);
+
+    --button-secondary-border-press: var(--silver);
+    --button-secondary-background-press: var(--silver);
+    --button-secondary-text-press: var(--mineshaft);
+  }
+
+  .electricOnWhite {
+    --base-background: var(--electric-mineshaft);
+    --shade-background: var(--electric-tundora);
+    --base-text: var(--electric-white);
+    --base-text-light: var(--electric-dove-gray);
+    --base-border: var(--electric-dove-gray);
+
+    --button-primary-border: var(--electric-brand-primary);
+    --button-primary-background: var(--electric-brand-primary);
+    --button-primary-text: var(--electric-white);
+
+    --button-primary-border-hover: var(--electric-brand-primary-lighter);
+    --button-primary-background-hover: var(--electric-brand-primary-lighter);
+    --button-primary-text-hover: var(--electric-white);
+
+    --button-primary-border-press: var(--electric-brand-primary-darker);
+    --button-primary-background-press: var(--electric-brand-primary-darker);
+    --button-primary-text-press: var(--electric-white);
+
+    --button-secondary-border: var(--electric-white);
+    --button-secondary-background: var(--electric-mineshaft);
+    --button-secondary-text: var(--electric-white);
+
+    --button-secondary-border-hover: var(--electric-white);
+    --button-secondary-background-hover: var(--electric-tundora);
+    --button-secondary-text-hover: var(--electric-white);
+
+    --button-secondary-border-press: var(--electric-white);
+    --button-secondary-background-press: var(--electric-mineshaft);
+    --button-secondary-text-press: var(--electric-silver);
+  }
 }

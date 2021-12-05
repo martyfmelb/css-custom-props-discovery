@@ -3,7 +3,7 @@ import themeableStyles from './Themeable.module.scss';
 // The values of these constants must correspond to the classnames in Themeable.module.scss
 export const THEME_DEFAULT = 'blackOnWhite';
 export const THEMES_INVERT_ONLY = ['blackOnWhite', 'whiteOnBlack'];
-export const THEMES_ALL = ['blackOnWhite', 'whiteOnBlack', 'whiteOnRed', 'electricOnWhite'];
+export const THEMES_ALL = ['blackOnWhite', 'whiteOnBlack', 'whiteOnBrandPrimary', 'electricOnWhite'];
 
 export type ThemeSupportDefaultOnly = typeof THEME_DEFAULT;
 export type ThemeSupportInvertOnly = typeof THEMES_INVERT_ONLY[number];

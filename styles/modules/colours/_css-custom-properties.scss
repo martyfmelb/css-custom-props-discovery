@@ -1,0 +1,23 @@
+:root {
+  --mineshaft: #1a1a1a;
+  --tundora: #404040;
+  --dove-gray: #888;
+  --silver: #ccc;
+  --black-haze: #f4f4f4;
+  --white: #fff;
+  --brand-primary: #eb0a1e;
+  --brand-primary-lighter: #{adjust-color(#eb0a1e, $lightness: 20%)};
+  --brand-primary-darker: #{adjust-color(#eb0a1e, $lightness: -20%)};
+  --white-x-brand-primary: #{mix(#fff, #eb0a1e)};
+
+  --electric-mineshaft: #001a20;
+  --electric-tundora: #384058;
+  --electric-dove-gray: #78A;
+  --electric-silver: #bcd;
+  --electric-black-haze: #ebf0f4;
+  --electric-white: #fff;
+  --electric-brand-primary: #35b;
+  --electric-brand-primary-lighter: #{adjust-color(#35b, $lightness: 20%)};
+  --electric-brand-primary-darker: #{adjust-color(#35b, $lightness: -20%)};
+  --electric-white-x-brand-primary: #{mix(#fff, #35b)};
+}

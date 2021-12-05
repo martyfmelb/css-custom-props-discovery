@@ -1,6 +1,6 @@
 import React from 'react';
 import Document, {
-  Html, Head, Main, NextScript, DocumentContext,
+  Html, Head, Main, NextScript, DocumentContext, DocumentInitialProps,
 } from 'next/document';
 import { getThemeClass } from '../traits/Themeable/types';
 
@@ -12,9 +12,9 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html className={getThemeClass('blackOnWhite')}>
+      <Html>
         <Head />
-        <body>
+        <body className={getThemeClass('blackOnWhite')}>
           <Main />
           <NextScript />
         </body>
