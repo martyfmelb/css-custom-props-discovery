@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import {
-  getThemeClass, MaybeThemeable, THEME_DEFAULT, ThemeSupportAll,
+  getThemeClass, MaybeThemeable, ThemeSupportAll,
 } from '../../traits/Themeable/types';
 import styles from '../Grid/Grid.module.scss';
 

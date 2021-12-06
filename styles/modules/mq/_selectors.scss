@@ -1,0 +1,26 @@
+:root {
+  --mq-lg: ;
+  --mq-md: initial;
+  --mq-sm: initial;
+  --mq-xs: initial;
+  --mq-xxs: initial;
+  --mq-xxxs: initial;
+
+  @media (max-width: 950px) { --mq-xxxs: initial; --mq-xxs: initial; --mq-xs: initial; --mq-sm: initial; --mq-md: ; --mq-lg: initial; }
+  @media (max-width: 768px) { --mq-xxxs: initial; --mq-xxs: initial; --mq-xs: initial; --mq-sm: ; --mq-md: initial; --mq-lg: initial; }
+  @media (max-width: 540px) { --mq-xxxs: initial; --mq-xxs: initial; --mq-xs: ; --mq-sm: initial; --mq-md: initial; --mq-lg: initial; }
+  @media (max-width: 479px) { --mq-xxxs: initial; --mq-xxs: ; --mq-xs: initial; --mq-sm: initial; --mq-md: initial; --mq-lg: initial; }
+  @media (max-width: 320px) { --mq-xxxs: ; --mq-xxs: initial; --mq-xs: initial; --mq-sm: initial; --mq-md: initial; --mq-lg: initial; }
+}
+
+@each $size in (xxxs, xxs, xs, sm, md, lg) {
+  .hide-for-#{$size} {
+    --display-when-#{$size}: var(--mq-#{$size}) none;
+    display: var(--display-when-#{$size});
+  }
+  .hide-except-#{$size} {
+    --display-when-#{$size}: var(--mq-#{$size});
+    --display-when-not-#{$size}: none;
+    display: var(--display-when-#{$size}, var(--display-when-not-#{$size}));
+  }
+}

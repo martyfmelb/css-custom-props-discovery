@@ -1,0 +1,79 @@
+.outerLayout {
+  display: flex;
+  width: 100%;
+  max-width: 1280px;
+
+  --flex-direction-xs-down: var(--mq-xs, var(--mq-xxs, var(--mq-xxxs))) column;
+  --flex-direction-sm-up: row;
+  flex-direction: var(--flex-direction-xs-down, var(--flex-direction-sm-up));
+
+  &__main {
+    flex-grow: 1;
+    border: 1px solid var(--base-border);
+    padding: 10px;
+
+    --mq-lg: initial;
+    --mq-md: ;
+    --mq-sm: initial;
+    --mq-xs: initial;
+    --mq-xxs: initial;
+    --mq-xxxs: initial;
+
+    $page-padding-left-and-right: 2 * 32px;
+    $cell-padding-left-and-right: 2 * 10px;
+    $column-gap: 20px;
+    $sidebar-width: 320px;
+    $non-main-width: $page-padding-left-and-right + $cell-padding-left-and-right + $column-gap + $sidebar-width;
+
+    @media (max-width: #{950px + $non-main-width}) { --mq-xxxs: initial; --mq-xxs: initial; --mq-xs: initial; --mq-sm: initial; --mq-md: ; --mq-lg: initial; }
+    @media (max-width: #{768px + $non-main-width}) { --mq-xxxs: initial; --mq-xxs: initial; --mq-xs: initial; --mq-sm: ; --mq-md: initial; --mq-lg: initial; }
+    @media (max-width: #{540px + $non-main-width}) { --mq-xxxs: initial; --mq-xxs: initial; --mq-xs: ; --mq-sm: initial; --mq-md: initial; --mq-lg: initial; }
+    @media (max-width: #{479px + $non-main-width}) { --mq-xxxs: initial; --mq-xxs: ; --mq-xs: initial; --mq-sm: initial; --mq-md: initial; --mq-lg: initial; }
+    @media (max-width: #{320px + $non-main-width}) { --mq-xxxs: ; --mq-xxs: initial; --mq-xs: initial; --mq-sm: initial; --mq-md: initial; --mq-lg: initial; }
+
+    $non-sidebar-width: $page-padding-left-and-right + $cell-padding-left-and-right;
+
+    @media (max-width: #{479px + $non-sidebar-width}) { --mq-xxxs: initial; --mq-xxs: ; --mq-xs: initial; --mq-sm: initial; --mq-md: initial; --mq-lg: initial; }
+    @media (max-width: #{320px + $non-sidebar-width}) { --mq-xxxs: ; --mq-xxs: initial; --mq-xs: initial; --mq-sm: initial; --mq-md: initial; --mq-lg: initial; }
+  }
+
+  &__sidebar {
+    flex-shrink: 0;
+    border: 1px solid var(--base-border);
+    padding: 10px;
+
+    --width-xs-down: var(--mq-xs, var(--mq-xxs, var(--mq-xxxs))) auto;
+    --width-sm-up: 320px;
+    width: var(--width-xs-down, var(--width-sm-up));
+
+    --margin-left-xs-down: var(--mq-xs, var(--mq-xxs, var(--mq-xxxs))) 0;
+    --margin-left-sm-up: 20px;
+    margin-left: var(--margin-left-xs-down, var(--margin-left-sm-up));
+  }
+
+  &__sidebarMq {
+    --mq-xxxs: ; --mq-xxs: initial; --mq-xs: initial; --mq-sm: initial; --mq-md: initial; --mq-lg: initial;
+
+    $page-padding-left-and-right: 2 * 32px;
+    $cell-padding-left-and-right: 2 * 10px;
+    $non-main-width: $page-padding-left-and-right + $cell-padding-left-and-right;
+
+    @media (max-width: #{479px + $non-main-width}) { --mq-xxxs: initial; --mq-xxs: ; --mq-xs: initial; --mq-sm: initial; --mq-md: initial; --mq-lg: initial; }
+    @media (max-width: #{320px + $non-main-width}) { --mq-xxxs: ; --mq-xxs: initial; --mq-xs: initial; --mq-sm: initial; --mq-md: initial; --mq-lg: initial; }
+  }
+}
+
+.innerLayout {
+  display: flex;
+  border: 1px solid var(--brand-primary);
+  --flex-direction-xxxs: var(--mq-xxxs) column;
+  --flex-direction-xxs-up: row;
+  flex-direction: var(--flex-direction-xxxs, var(--flex-direction-xxs-up));
+
+  &__cell {
+    border: 1px solid var(--brand-primary);
+    padding: 10px;
+    flex-grow: 1;
+    flex-shrink: 0;
+  }
+}

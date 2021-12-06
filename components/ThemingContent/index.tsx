@@ -1,6 +1,5 @@
 import React, { useCallback, useRef, useState } from 'react';
 import styles from './ThemingContent.module.scss';
-import themeableStyles from '../../traits/Themeable/Themeable.module.scss';
 import Grid from '../Grid';
 import Cell from '../Cell';
 import RichText from '../RichText';
@@ -11,7 +10,7 @@ const ThemingContent = function () {
 
   const handleCheckboxChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     darkMode.current = e.target.checked;
-    document.documentElement.classList.toggle(themeableStyles.darkMode, darkMode.current);
+    document.documentElement.classList.toggle('darkMode', darkMode.current);
   }, []);
 
   return (

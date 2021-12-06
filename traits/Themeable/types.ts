@@ -1,6 +1,4 @@
-import themeableStyles from './Themeable.module.scss';
-
-// The values of these constants must correspond to the classnames in Themeable.module.scss
+// The values of these constants must correspond to the classnames in Themeable.scss
 export const THEME_DEFAULT = 'blackOnWhite';
 export const THEMES_INVERT_ONLY = ['blackOnWhite', 'whiteOnBlack'];
 export const THEMES_ALL = ['blackOnWhite', 'whiteOnBlack', 'whiteOnBrandPrimary', 'electricOnWhite'];
@@ -18,5 +16,5 @@ export type MaybeThemeable<T, U = ThemeSupportAll> = T & {
 }
 
 export function getThemeClass<T extends ThemeSupportAll>(theme: T | undefined) {
-  return theme ? themeableStyles[theme] : undefined;
+  return theme || undefined;
 }

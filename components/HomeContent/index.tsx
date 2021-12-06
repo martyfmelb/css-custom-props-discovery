@@ -12,8 +12,16 @@ const HomeContent = function () {
           <a className={styles.card}>
             <h2>Theming &rarr;</h2>
             <p>
-              Use Sass variables and CSS custom properties together for content-sensitive
-              theming.
+              Use classes and CSS custom properties together to implement theming.
+            </p>
+          </a>
+        </Link>
+
+        <Link href="/container-queries">
+          <a className={styles.card}>
+            <h2>Container Queries &rarr;</h2>
+            <p>
+              Use classes and CSS custom properties together to implement container queries.
             </p>
           </a>
         </Link>
