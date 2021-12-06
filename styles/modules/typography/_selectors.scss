@@ -1,0 +1,8 @@
+.s-typography {
+  > :not(.-keep-margin-top):first-child {
+    margin-top: 0;
+  }
+  > :not(.-keep-margin-top):last-child {
+    margin-bottom: 0;
+  }
+}
