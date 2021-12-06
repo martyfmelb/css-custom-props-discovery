@@ -5,18 +5,16 @@ const InnerLayout = function () {
   return (
     <div className={styles.innerLayout}>
       <div className={styles.innerLayout__cell}>
-        <code>flex-direction</code>
-        {' '}
-        is column
+        Go columnar
       </div>
-      <div className={styles.innerLayout__cell}>only when --mq-xxxs</div>
+      <div className={styles.innerLayout__cell}>when xxxs</div>
       <div className={styles.innerLayout__cell}>
-        <span className="hide-except-xxxs">--mq-xxxs active</span>
-        <span className="hide-except-xxs">--mq-xxs active</span>
-        <span className="hide-except-xs">--mq-xs active</span>
-        <span className="hide-except-sm">--mq-sm active</span>
-        <span className="hide-except-md">--mq-md active</span>
-        <span className="hide-except-lg">--mq-lg active</span>
+        <span className="hide-except-xxxs">xxxs</span>
+        <span className="hide-except-xxs">xxs</span>
+        <span className="hide-except-xs">xs</span>
+        <span className="hide-except-sm">sm</span>
+        <span className="hide-except-md">md</span>
+        <span className="hide-except-lg">lg</span>
       </div>
     </div>
   );

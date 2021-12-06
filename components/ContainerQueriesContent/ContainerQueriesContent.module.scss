@@ -33,7 +33,7 @@
 
     $non-sidebar-width: $page-padding-left-and-right + $cell-padding-left-and-right;
 
-    @media (max-width: #{479px + $non-sidebar-width}) { --mq-xxxs: initial; --mq-xxs: ; --mq-xs: initial; --mq-sm: initial; --mq-md: initial; --mq-lg: initial; }
+    @media (max-width: 540px) { --mq-xxxs: initial; --mq-xxs: ; --mq-xs: initial; --mq-sm: initial; --mq-md: initial; --mq-lg: initial; }
     @media (max-width: #{320px + $non-sidebar-width}) { --mq-xxxs: ; --mq-xxs: initial; --mq-xs: initial; --mq-sm: initial; --mq-md: initial; --mq-lg: initial; }
   }
 
@@ -49,6 +49,10 @@
     --margin-left-xs-down: var(--mq-xs, var(--mq-xxs, var(--mq-xxxs))) 0;
     --margin-left-sm-up: 20px;
     margin-left: var(--margin-left-xs-down, var(--margin-left-sm-up));
+
+    --margin-top-xs-down: var(--mq-xs, var(--mq-xxs, var(--mq-xxxs))) 20px;
+    --margin-top-sm-up: 0;
+    margin-top: var(--margin-top-xs-down, var(--margin-top-sm-up));
   }
 
   &__sidebarMq {
@@ -58,7 +62,7 @@
     $cell-padding-left-and-right: 2 * 10px;
     $non-main-width: $page-padding-left-and-right + $cell-padding-left-and-right;
 
-    @media (max-width: #{479px + $non-main-width}) { --mq-xxxs: initial; --mq-xxs: ; --mq-xs: initial; --mq-sm: initial; --mq-md: initial; --mq-lg: initial; }
+    @media (max-width: 540px) { --mq-xxxs: initial; --mq-xxs: ; --mq-xs: initial; --mq-sm: initial; --mq-md: initial; --mq-lg: initial; }
     @media (max-width: #{320px + $non-main-width}) { --mq-xxxs: ; --mq-xxs: initial; --mq-xs: initial; --mq-sm: initial; --mq-md: initial; --mq-lg: initial; }
   }
 }
