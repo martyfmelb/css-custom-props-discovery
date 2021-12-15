@@ -1,5 +1,5 @@
 import React from 'react';
-import ThemingContent from '../components/ThemingContent';
+import ThemingContent from '../content/ThemingContent';
 import DefaultLayout from '../layouts/DefaultLayout';
 
 const Theming = function () {

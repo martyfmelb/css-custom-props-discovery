@@ -1,5 +1,5 @@
 import React from 'react';
-import ContainerQueriesContent from '../components/ContainerQueriesContent';
+import ContainerQueriesContent from '../content/ContainerQueriesContent';
 import DefaultLayout from '../layouts/DefaultLayout';
 
 const Theming = function () {

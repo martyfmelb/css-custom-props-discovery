@@ -1,9 +1,9 @@
 import React, { useCallback, useRef, useState } from 'react';
 import styles from './ThemingContent.module.scss';
-import Grid from '../Grid';
-import Cell from '../Cell';
-import RichText from '../RichText';
-import ButtonsContainer from '../ButtonsContainer';
+import Grid from '../../components/Grid';
+import Cell from '../../components/Cell';
+import RichText from '../../components/RichText';
+import ButtonsContainer from '../../components/ButtonsContainer';
 
 const ThemingContent = function () {
   const darkMode = useRef(false);
