@@ -1,5 +1,5 @@
 import React, { useCallback, useRef, useState } from 'react';
-import styles from './ContainerQueriesContent.module.scss';
+import styles from './ContainerQueriesMixinifiedContent.module.scss';
 
 const InnerLayout = function () {
   return (
@@ -20,7 +20,7 @@ const InnerLayout = function () {
   );
 };
 
-const ContainerQueriesContent = function () {
+const ContainerQueriesMixinifiedContent = function () {
   return (
     <>
       <h1 className={styles.title}>Container Queries</h1>
@@ -58,4 +58,4 @@ const ContainerQueriesContent = function () {
   );
 };
 
-export default ContainerQueriesContent;
+export default ContainerQueriesMixinifiedContent;

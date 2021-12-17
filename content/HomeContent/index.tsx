@@ -25,6 +25,15 @@ const HomeContent = function () {
             </p>
           </a>
         </Link>
+
+        <Link href="/container-queries-mixinified">
+          <a className={styles.card}>
+            <h2>Container Queries Mixinified &rarr;</h2>
+            <p>
+              Classes + CSS custom properties with a simpler Sass interface
+            </p>
+          </a>
+        </Link>
       </div>
     </>
   );

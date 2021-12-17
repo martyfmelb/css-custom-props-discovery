@@ -1,0 +1,62 @@
+@use "../../styles/modules/mq/variables" as *;
+@use "../../styles/modules/mq/mixins-and-functions" as *;
+
+.outerLayout {
+  display: flex;
+  width: 100%;
+  max-width: 1280px;
+
+  @include property-breakpoint(sm, flex-direction, column, row);
+
+  $page-side-padding: 2 * 32px;
+  $cell-side-padding-and-border: 2 * 10px + 2 * 1px;
+
+  &__main {
+    flex-grow: 1;
+    border: 1px solid var(--base-border);
+    padding: 10px;
+
+    $non-main-width-xs-down: $page-side-padding + $cell-side-padding-and-border;
+    @include set-container-mqs-from-map(adjust-mq-widths($mqs-default, $non-main-width-xs-down));
+
+    $column-gap: 20px;
+    $sidebar-width: 320px;
+    $non-main-width-sm-up: $page-side-padding + $cell-side-padding-and-border + $column-gap + $sidebar-width;
+    @include mq-up(sm) {
+      @include set-container-mqs-from-map(adjust-mq-widths($mqs-default, $non-main-width-sm-up));
+    }
+  }
+
+  &__sidebar {
+    flex-shrink: 0;
+    border: 1px solid var(--base-border);
+    padding: 10px;
+
+    @include property-breakpoint(sm, width, auto, 320px);
+    @include property-breakpoint(sm, margin-left, 0, 20px);
+    @include property-breakpoint(sm, margin-top, 20px, 0);
+  }
+
+  &__sidebarMq {
+    $non-main-width: $page-side-padding + $cell-side-padding-and-border;
+
+    @include set-container-mqs-from-map(adjust-mq-widths($mqs-default, $non-main-width));
+    @include mq-up(sm) {
+      @include set-container-mq(xxxs);
+    }
+  }
+}
+
+.innerLayout {
+  display: flex;
+  border: 1px solid var(--brand-primary);
+
+  @include property-breakpoint(xxs, flex-direction, column, row);
+
+  &__cell {
+    border: 1px solid var(--brand-primary);
+    padding: 10px;
+    flex-grow: 1;
+    flex-shrink: 0;
+  }
+}

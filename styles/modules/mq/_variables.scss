@@ -1,0 +1,8 @@
+$mqs-default: (
+  xxxs: (min: null, max: 320px),
+  xxs: (min: 321px, max: 479px),
+  xs: (min: 480px, max: 540px),
+  sm: (min: 541px, max: 768px),
+  md: (min: 767px, max: 950px),
+  lg: (min: 951px, max: null)
+) !default;

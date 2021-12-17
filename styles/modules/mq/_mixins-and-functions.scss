@@ -1,0 +1,146 @@
+@use "variables" as *;
+
+@function slice($list, $start: 1, $end: length($list)) {
+  $result: null;
+
+  @if type-of($start) != number or type-of($end) != number {
+    @warn "Either $start or $end are not a number for `slice`.";
+  }
+
+  @else if $start > $end {
+    @warn "The start index has to be lesser than or equals to the end index for `slice`.";
+  }
+
+  @else if $start < 1 or $end < 1 {
+    @warn "List indexes must be non-zero integers for `slice`.";
+  }
+
+  @else if $start > length($list) {
+    @warn "List index is #{$start} but list is only #{length($list)} item long for `slice`.";
+  }
+
+  @else if $end > length($list) {
+    @warn "List index is #{$end} but list is only #{length($list)} item long for `slice`.";
+  }
+
+  @else {
+    $result: ();
+
+    @for $i from $start through $end {
+      $result: append($result, nth($list, $i));
+    }
+  }
+
+  @return $result;
+}
+
+$mq-keys-default: map-keys($mqs-default);
+
+@mixin set-container-mq($mq-key, $mq-keys: $mq-keys-default) {
+  @each $mq-key-inner in $mq-keys {
+    $is-current-mq: $mq-key-inner == $mq-key;
+    @if $is-current-mq {
+      --mq-#{$mq-key-inner}: ;
+    } @else {
+      --mq-#{$mq-key-inner}: initial;
+    }
+  }
+}
+
+@mixin mq($mq) {
+  $mq-min-width-condition: if(map-get($mq, min) != null, "(min-width: #{map-get($mq, min)})", "");
+  $mq-max-width-condition: if(map-get($mq, max) != null, "(max-width: #{map-get($mq, max)})", "");
+  $mq-and: if(map-get($mq, min) and map-get($mq, max), "and", "");
+  @media #{$mq-min-width-condition + $mq-and + $mq-max-width-condition} {
+    @content;
+  }
+}
+
+@mixin mq-only($mq-key, $mqs: $mqs-default) {
+  @include mq(map-get($mqs, $mq-key)) {
+    @content;
+  }
+}
+
+@mixin mq-up($mq-key, $mqs: $mqs-default) {
+  @include mq(map-merge(map-get($mqs, $mq-key), (max: null))) {
+    @content;
+  }
+}
+
+@mixin mq-down($mq-key, $mqs: $mqs-default) {
+  @include mq(map-merge(map-get($mqs, $mq-key), (min: null))) {
+    @content;
+  }
+}
+
+@mixin set-container-mqs-from-map($mqs, $mq-keys: $mq-keys-default) {
+  @each $mq-key in map-keys($mqs) {
+    $mq: map-get($mqs, $mq-key);
+    @if $mq {
+      @include mq($mq) {
+        @include set-container-mq($mq-key, $mq-keys);
+      }
+    }
+  }
+}
+
+@function adjust-mq-widths($mqs, $width-offset) {
+  $mqs-out: $mqs;
+  @each $mq-key in map-keys($mqs) {
+    $mq: map-get($mqs, $mq-key);
+    $mqs-out: map-merge($mqs-out, (
+      $mq-key: (
+        min: if(map-get($mq, min) != null, map-get($mq, min) + $width-offset, null),
+        max: if(map-get($mq, max) != null, map-get($mq, max) + $width-offset, null)
+      )
+    ));
+  }
+  @return $mqs-out;
+}
+
+@function mq-key-and-down($mq-key, $mq-keys: $mq-keys-default) {
+  @return slice($mq-keys, 1, index($mq-keys, $mq-key))
+}
+
+@function mq-key-and-up($mq-key, $mq-keys: $mq-keys-default) {
+  @return slice($mq-keys, index($mq-keys, $mq-key))
+}
+
+@function mq-key-prev($mq-key, $mq-keys: $mq-keys-default) {
+  $mq-keys-padded: append(join(null, $mq-keys), null);
+  @return nth($mq-keys, index($mq-keys, $mq-key) - 1);
+}
+
+@function mq-key-next($mq-key, $mq-keys: $mq-keys-default) {
+  $mq-keys-padded: append(join(null, $mq-keys), null);
+  @return nth($mq-keys, index($mq-keys, $mq-key) + 1);
+}
+
+@function combine-vars-or($vars) {
+  $str: "";
+  @each $var in $vars {
+    $str: "#{$str}, var(#{$var}";
+  }
+  @each $var in $vars {
+    $str: "#{$str})"
+  }
+  @return #{str-slice($str, 3)};
+}
+
+@function mq-keys-to-vars($mq-keys) {
+  $vars: ();
+  @each $mq-key in $mq-keys {
+    $vars: append($vars, #{"--mq-" + $mq-key});
+  }
+  @return $vars;
+}
+
+@mixin property-breakpoint($mq-key-breakpoint, $prop, $value-prev-down, $value-up) {
+  $mq-key-breakpoint-prev: mq-key-prev($mq-key-breakpoint);
+
+  --#{$prop}-#{$mq-key-breakpoint}-up: #{combine-vars-or(mq-keys-to-vars(mq-key-and-up($mq-key-breakpoint)))} #{$value-up};
+  --#{$prop}-#{$mq-key-breakpoint-prev}-down: #{$value-prev-down};
+
+  #{$prop}: var(--#{$prop}-#{$mq-key-breakpoint}-up, var(--#{$prop}-#{$mq-key-breakpoint-prev}-down));
+}
