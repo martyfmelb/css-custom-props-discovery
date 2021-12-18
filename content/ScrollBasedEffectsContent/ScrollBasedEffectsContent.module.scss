@@ -1,0 +1,87 @@
+.root3d {
+  width: 100%;
+  min-height: 100vh;
+  transform-style: preserve-3d;
+  perspective: 100px;
+  perspective-origin: calc(50vw + var(--scroll-x)) calc(50vh + var(--scroll-y));
+}
+
+.backgroundOrnament {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 200%;
+  height: 100%;
+  transform: translateX(-50%) translateY(-50%) translateZ(-300px) scale(3);
+  background-size: 40px 40px;
+  background-image:
+    linear-gradient(to right, grey 1px, transparent 1px),
+    linear-gradient(to bottom, grey 1px, transparent 1px);
+}
+
+.section {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.75);
+  border: 5px solid var(--electric-dove-gray);
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section + .section {
+  margin-top: 30px;
+}
+
+.sectionWidth40 {
+  width: 40%;
+}
+
+.sectionWidth60 {
+  width: 60%;
+}
+
+.sectionWidth80 {
+  width: 80%;
+}
+
+.sectionWidth100 {
+  width: 100%;
+}
+
+.sectionLeft,
+.sectionRight {
+  position: absolute;
+  top: -5px;
+  height: calc(100% + 10px);
+  background: var(--electric-silver);
+  width: 10px;
+}
+
+.sectionTop,
+.sectionBottom {
+  position: absolute;
+  left: -5px;
+  width: calc(100% + 10px);
+  background: var(--electric-black-haze);
+  height: 10px;
+}
+
+.sectionLeft {
+  right: calc(100% + 5px);
+  transform: translateX(50%) rotateY(90deg) translateX(50%);
+}
+
+.sectionRight {
+  left: calc(100% + 5px);
+  transform: translateX(-50%) rotateY(90deg) translateX(50%);
+}
+
+.sectionTop {
+  bottom: calc(100% + 5px);
+  transform: translateY(50%) rotateX(90deg) translateY(-50%);
+}
+
+.sectionBottom {
+  top: calc(100% + 5px);
+  transform: translateY(-50%) rotateX(90deg) translateY(-50%);
+}

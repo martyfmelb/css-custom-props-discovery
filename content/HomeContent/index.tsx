@@ -21,7 +21,7 @@ const HomeContent = function () {
           <a className={styles.card}>
             <h2>Container Queries &rarr;</h2>
             <p>
-              Use classes and CSS custom properties together to implement container queries.
+              Use CSS custom properties directly to implement container queries.
             </p>
           </a>
         </Link>
@@ -30,7 +30,16 @@ const HomeContent = function () {
           <a className={styles.card}>
             <h2>Container Queries Mixinified &rarr;</h2>
             <p>
-              Classes + CSS custom properties with a simpler Sass interface
+              Container queries using Sass mixins for better maintainability.
+            </p>
+          </a>
+        </Link>
+
+        <Link href="/scroll-based-effects">
+          <a className={styles.card}>
+            <h2>Scroll-based Effects &rarr;</h2>
+            <p>
+              One tiny piece of JS fuels many CSS custom property-driven effects.
             </p>
           </a>
         </Link>

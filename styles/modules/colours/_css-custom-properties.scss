@@ -19,5 +19,5 @@
   --electric-brand-primary: #35b;
   --electric-brand-primary-lighter: #7992db; // #{adjust-color(#35b, $lightness: 20%)};
   --electric-brand-primary-darker: #1d316b; // #{adjust-color(#35b, $lightness: -20%)};
-  --electric-white-x-brand-primary: #{mix(#fff, #35b)};
+  --electric-white-x-brand-primary: #99aadd; // #{mix(#fff, #35b)};
 }
