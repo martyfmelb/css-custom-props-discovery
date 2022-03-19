@@ -4,6 +4,11 @@
   transform-style: preserve-3d;
   perspective: 100px;
   perspective-origin: calc(50vw + var(--scroll-x)) calc(50vh + var(--scroll-y));
+
+  h2 {
+    font-size: 24px;
+    margin: 0;
+  }
 }
 
 .backgroundOrnament {
@@ -15,17 +20,19 @@
   transform: translateX(-50%) translateY(-50%) translateZ(-300px) scale(3);
   background-size: 40px 40px;
   background-image:
-    linear-gradient(to right, grey 1px, transparent 1px),
-    linear-gradient(to bottom, grey 1px, transparent 1px);
+    linear-gradient(to right, var(--electric-black-haze) 10px, transparent 1px),
+    linear-gradient(to bottom, var(--electric-black-haze) 10px, transparent 1px);
 }
 
 .section {
   width: 100%;
   background: rgba(255, 255, 255, 0.75);
   border: 5px solid var(--electric-dove-gray);
+  padding: 16px;
   position: relative;
   margin-left: auto;
   margin-right: auto;
+  transform-style: preserve-3d;
 }
 
 .section + .section {
@@ -53,7 +60,7 @@
   position: absolute;
   top: -5px;
   height: calc(100% + 10px);
-  background: var(--electric-silver);
+  background: var(--electric-dove-gray);
   width: 10px;
 }
 
@@ -62,7 +69,7 @@
   position: absolute;
   left: -5px;
   width: calc(100% + 10px);
-  background: var(--electric-black-haze);
+  background: var(--electric-silver);
   height: 10px;
 }
 

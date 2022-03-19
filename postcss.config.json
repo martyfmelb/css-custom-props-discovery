@@ -1,0 +1,14 @@
+{
+  "plugins": [
+    [
+      "postcss-preset-env",
+      {
+        "autoprefixer": false,
+        "stage": 4,
+        "features": {
+          "custom-properties": false
+        }
+      }
+    ]
+  ]
+}
