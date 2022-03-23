@@ -1,4 +1,4 @@
-import React, { useCallback, useRef, useState } from 'react';
+import React from 'react';
 import styles from './ContainerQueriesMixinifiedContent.module.scss';
 
 const InnerLayout = function () {
@@ -20,15 +20,20 @@ const InnerLayout = function () {
   );
 };
 
-const ContainerQueriesMixinifiedContent = function () {
+function ContainerQueriesMixinifiedContent() {
   return (
     <>
-      <h1 className={styles.title}>Container Queries</h1>
+      <div className="s-typography -keep-margin-bottom">
+        <h1>Container Queries</h1>
+        <h2 className="s-tg-h3">Outside the layout container, which media query is active?</h2>
+      </div>
 
-      <h2>Outside the layout container, which media query is active?</h2>
       <InnerLayout />
 
-      <h2>Inside the layout container, which media query is active?</h2>
+      <div className="s-typography -keep-margins">
+        <h2 className="s-tg-h3">Inside the layout container, which media query is active?</h2>
+      </div>
+
       <div className={styles.outerLayout}>
         <div className={styles.outerLayout__main}>
           <p>
@@ -56,6 +61,6 @@ const ContainerQueriesMixinifiedContent = function () {
       </div>
     </>
   );
-};
+}
 
 export default ContainerQueriesMixinifiedContent;

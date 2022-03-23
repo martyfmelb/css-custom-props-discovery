@@ -2,9 +2,12 @@
   "extends": [
     "next/core-web-vitals",
     "airbnb",
-    "airbnb/hooks"
+    "airbnb/hooks",
+    "prettier"
   ],
+  "plugins": ["prettier"],
   "rules": {
+    "prettier/prettier": ["error"],
     "react/jsx-filename-extension": [
       "error",
       {

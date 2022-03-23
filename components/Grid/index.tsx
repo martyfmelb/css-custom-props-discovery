@@ -5,10 +5,11 @@ import styles from './Grid.module.scss';
 type GridProps = {
   cols?: 1 | 2 | 3 | 4;
   gap?: 'small' | 'none',
+  noColsMaxMq?: 'xs' | 'sm' | 'md'
 };
 
 const Grid: React.FC<GridProps> = function Grid({
-  gap, cols, children,
+  gap, cols, noColsMaxMq, children,
 }) {
   return (
     <div
@@ -18,6 +19,9 @@ const Grid: React.FC<GridProps> = function Grid({
               [styles.cols3]: cols === 3,
               [styles.cols4]: cols === 4,
               [styles.gapSmall]: gap === 'small',
+              [styles.noColsMaxMqXs]: noColsMaxMq === 'xs',
+              [styles.noColsMaxMqSm]: noColsMaxMq === 'sm',
+              [styles.noColsMaxMqMd]: noColsMaxMq === 'md',
             })
           }
     >
@@ -29,6 +33,7 @@ const Grid: React.FC<GridProps> = function Grid({
 Grid.defaultProps = {
   cols: 1,
   gap: 'none',
+  noColsMaxMq: undefined,
 };
 
 export default Grid;

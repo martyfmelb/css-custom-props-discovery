@@ -1,14 +1,13 @@
 .root3d {
   width: 100%;
-  min-height: 100vh;
+  min-height: calc(100vh - 4rem);
   transform-style: preserve-3d;
   perspective: 100px;
-  perspective-origin: calc(50vw + var(--scroll-x)) calc(50vh + var(--scroll-y));
+  perspective-origin: calc(50vw + var(--scroll-x) * 1px) calc(50vh + var(--scroll-y) * 1px);
+}
 
-  h2 {
-    font-size: 24px;
-    margin: 0;
-  }
+.pageFooter {
+  position: relative; // Allow footer to render on top of root3d
 }
 
 .backgroundOrnament {
@@ -16,17 +15,24 @@
   left: 50%;
   top: 50%;
   width: 200%;
-  height: 100%;
-  transform: translateX(-50%) translateY(-50%) translateZ(-300px) scale(3);
-  background-size: 40px 40px;
-  background-image:
-    linear-gradient(to right, var(--electric-black-haze) 10px, transparent 1px),
-    linear-gradient(to bottom, var(--electric-black-haze) 10px, transparent 1px);
+  height: 200%;
+  transform: translateX(-50%) translateY(-50%) translateZ(-300px) scale(6) rotate(10deg);
+  background-size: 20px;
+
+  &.pattern1 {
+    background-image: linear-gradient(to right, var(--parallax-background-colour) 10px, transparent 1px);
+  }
+
+  &.pattern2 {
+    transform: translateX(-50%) translateY(-50%) translateZ(-300px) scale(6) rotate(100deg);
+    background-image: linear-gradient(to right, var(--parallax-background-colour) 10px, transparent 1px);
+  }
 }
+
 
 .section {
   width: 100%;
-  background: rgba(255, 255, 255, 0.75);
+  background: var(--section-3d-background);
   border: 5px solid var(--electric-dove-gray);
   padding: 16px;
   position: relative;
@@ -53,6 +59,26 @@
 
 .sectionWidth100 {
   width: 100%;
+}
+
+.sectionDepthHalf {
+  .sectionLeft,
+  .sectionRight {
+    width: 5px;
+  }
+  .sectionTop,
+  .sectionBottom {
+    height: 5px;
+  }
+  .sectionShadow {
+    transform: translateZ(-5px);
+  }
+}
+.sectionZPlusHalfAndRotate {
+  transform:
+          translateZ(calc(0px + var(--scroll-y) * 0.01px))
+          rotateY(calc(var(--scroll-y) * 0.002deg - 1deg))
+          rotateX(calc(var(--scroll-y) * 0.002deg - 1deg));
 }
 
 .sectionLeft,
@@ -90,5 +116,5 @@
 
 .sectionBottom {
   top: calc(100% + 5px);
-  transform: translateY(-50%) rotateX(90deg) translateY(-50%);
+  transform: translateY(-50%) rotateX(90deg) translateY(-47.5%);
 }

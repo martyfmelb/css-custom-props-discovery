@@ -1,21 +1,21 @@
-.container {
-  padding: 0 2rem;
-}
-
 .main {
-  min-height: 100vh;
+  min-height: calc(100vh - 2 * var(--layout-spacer-xl));
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
 
 .footer {
+  margin-top: var(--layout-spacer-xl);
+  margin-left: calc(-1 * var(--layout-spacer-xl));
+  margin-right: calc(-1 * var(--layout-spacer-xl));
   display: flex;
   flex: 1;
-  padding: 2rem 0;
+  padding: var(--layout-spacer-xl) 0;
   border-top: 1px solid #eaeaea;
+  text-align: center;
   justify-content: center;
   align-items: center;
 

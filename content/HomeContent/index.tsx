@@ -2,7 +2,7 @@ import Link from 'next/link';
 import React from 'react';
 import styles from './HomeContent.module.scss';
 
-const HomeContent = function () {
+function HomeContent() {
   return (
     <>
       <h1 className={styles.title}>CSS custom properties</h1>
@@ -43,9 +43,18 @@ const HomeContent = function () {
             </p>
           </a>
         </Link>
+
+        <Link href="/responsive-design-tokens">
+          <a className={styles.card}>
+            <h2>Responsive design tokens &rarr;</h2>
+            <p>
+              Use a single token, get all the breakpoints.
+            </p>
+          </a>
+        </Link>
       </div>
     </>
   );
-};
+}
 
 export default HomeContent;

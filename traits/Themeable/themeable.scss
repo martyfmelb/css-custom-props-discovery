@@ -1,6 +1,12 @@
 @use "styles/modules/colours/variables" as *;
 
+@mixin themeable-background-and-text() {
+  background: var(--base-background);
+  color: var(--base-text);
+}
+
 .blackOnWhite {
+  @include themeable-background-and-text();
   --base-background: var(--white);
   --shade-background: var(--black-haze);
   --base-text: var(--mineshaft);
@@ -30,9 +36,13 @@
   --button-secondary-border-press: var(--mineshaft);
   --button-secondary-background-press: var(--mineshaft);
   --button-secondary-text-press: var(--silver);
+
+  --parallax-background-colour: #{rgba($electric-silver, 0.2)};
+  --section-3d-background: #{rgba($white, 0.75)};
 }
 
 .whiteOnBlack {
+  @include themeable-background-and-text();
   --base-background: var(--mineshaft);
   --shade-background: var(--tundora);
   --base-text: var(--white);
@@ -62,9 +72,13 @@
   --button-secondary-border-press: var(--silver);
   --button-secondary-background-press: var(--mineshaft);
   --button-secondary-text-press: var(--silver);
+
+  --parallax-background-colour: #{rgba($electric-tundora, 0.5)};
+  --section-3d-background: #{rgba($mineshaft, 0.75)};
 }
 
 .whiteOnBrandPrimary {
+  @include themeable-background-and-text();
   --base-background: var(--brand-primary);
   --shade-background: var(--brand-primary-lighter);
   --base-text: var(--white);
@@ -94,9 +108,13 @@
   --button-secondary-border-press: var(--silver);
   --button-secondary-background-press: var(--brand-primary);
   --button-secondary-text-press: var(--silver);
+
+  --parallax-background-colour: #{rgba($brand-primary-lighter, 0.5)};
+  --section-3d-background: #{rgba($brand-primary, 0.75)};
 }
 
 .electricOnWhite {
+  @include themeable-background-and-text();
   --base-background: var(--electric-white);
   --shade-background: var(--electric-black-haze);
   --base-text: var(--electric-mineshaft);
@@ -126,10 +144,14 @@
   --button-secondary-border-press: var(--electric-mineshaft);
   --button-secondary-background-press: var(--electric-mineshaft);
   --button-secondary-text-press: var(--electric-silver);
+
+  --parallax-background-colour: #{rgba($electric-black-haze, 0.5)};
+  --section-3d-background: #{rgba($white, 0.75)};
 }
 
 .darkMode {
   .blackOnWhite {
+    @include themeable-background-and-text();
     --base-background: var(--mineshaft);
     --shade-background: var(--tundora);
     --base-text: var(--white);
@@ -159,9 +181,13 @@
     --button-secondary-border-press: var(--silver);
     --button-secondary-background-press: var(--mineshaft);
     --button-secondary-text-press: var(--silver);
+
+    --parallax-background-colour: #{rgba($electric-tundora, 0.25)};
+    --section-3d-background: #{rgba($mineshaft, 0.75)};
   }
 
   .whiteOnBlack {
+    @include themeable-background-and-text();
     --base-background: var(--tundora);
     --shade-background: var(--dove-gray);
     --base-text: var(--white);
@@ -191,9 +217,13 @@
     --button-secondary-border-press: var(--silver);
     --button-secondary-background-press: var(--tundora);
     --button-secondary-text-press: var(--silver);
+
+    --parallax-background-colour: #{rgba($electric-dove-gray, 0.25)};
+    --section-3d-background: #{rgba($tundora, 0.75)};
   }
 
   .whiteOnBrandPrimary {
+    @include themeable-background-and-text();
     --base-background: var(--brand-primary-darker);
     --shade-background: var(--brand-primary);
     --base-text: var(--white);
@@ -223,9 +253,13 @@
     --button-secondary-border-press: var(--silver);
     --button-secondary-background-press: var(--brand-primary-darker);
     --button-secondary-text-press: var(--silver);
+
+    --parallax-background-colour: #{rgba($brand-primary, 0.5)};
+    --section-3d-background: #{rgba($brand-primary-darker, 0.75)};
   }
 
   .electricOnWhite {
+    @include themeable-background-and-text();
     --base-background: var(--electric-mineshaft);
     --shade-background: var(--electric-tundora);
     --base-text: var(--electric-white);
@@ -255,10 +289,8 @@
     --button-secondary-border-press: var(--electric-silver);
     --button-secondary-background-press: var(--electric-mineshaft);
     --button-secondary-text-press: var(--electric-silver);
+
+    --parallax-background-colour: #{rgba($electric-black-haze, 0.5)};
+    --section-3d-background: #{rgba($white, 0.75)};
   }
 }
-
-
-
-
-

@@ -1,8 +1,111 @@
+@use "styles/modules/mq/mixins-and-functions" as *;
+@use "variables-mq" as *;
+
 .s-typography {
-  > :not(.-keep-margin-top):first-child {
+  &:not(.-keep-margin-top):not(.-keep-margins) > :not(.-keep-margin-top):first-child {
     margin-top: 0;
   }
-  > :not(.-keep-margin-top):last-child {
+  &:not(.-keep-margin-bottom):not(.-keep-margins) > :not(.-keep-margin-bottom):last-child {
     margin-bottom: 0;
+  }
+
+  --font-weight-semi-bold: 500;
+
+  --base-font-size: 16px;
+  --base-line-height: 24px;
+  --base-font-weight: 400;
+
+  font-size: var(--base-font-size);
+  line-height: var(--base-line-height);
+  font-weight: var(--base-font-weight);
+
+  @include mq-up($mq-typography-large-min) {
+    --base-font-size: 14px;
+    --base-line-height: 22px;
+  }
+
+  --p-spacing: 16px;
+  @include mq-up($mq-typography-large-min) {
+    --p-spacing: 22px;
+  }
+
+  p,
+  .s-tg-p {
+    margin: var(--p-spacing) 0;
+    font-size: var(--base-font-size);
+    line-height: var(--base-line-height);
+    font-weight: var(--base-font-weight);
+  }
+
+  --h1-font-size: 32px;
+  --h1-line-height: 36px;
+  --h1-spacing: 18px;
+
+  @include mq-up($mq-typography-large-min) {
+    --h1-font-size: 48px;
+    --h1-line-height: 52px;
+    --h1-spacing: 26px;
+  }
+
+  h1,
+  .s-tg-h1 {
+    font-size: var(--h1-font-size);
+    line-height: var(--h1-line-height);
+    font-weight: var(--font-weight-semi-bold);
+    margin: var(--h1-spacing) 0;
+  }
+
+  --h2-font-size: 24px;
+  --h2-line-height: 28px;
+  --h2-spacing: var(--p-spacing);
+
+  @include mq-up($mq-typography-large-min) {
+    --h2-font-size: 36px;
+    --h2-line-height: 40px;
+  }
+
+  h2,
+  .s-tg-h2 {
+    font-size: var(--h2-font-size);
+    line-height: var(--h2-line-height);
+    font-weight: var(--font-weight-semi-bold);
+    margin: var(--h2-spacing) 0;
+  }
+
+  --h3-font-size: 20px;
+  --h3-line-height: 24px;
+  --h3-spacing: var(--p-spacing);
+
+  @include mq-up($mq-typography-large-min) {
+    --h3-font-size: 24px;
+    --h3-line-height: 28px;
+  }
+
+  h3,
+  .s-tg-h3 {
+    font-size: var(--h3-font-size);
+    line-height: var(--h3-line-height);
+    font-weight: var(--font-weight-semi-bold);
+    margin: var(--h3-spacing) 0;
+  }
+
+  --c1-font-size: 15px;
+  --c1-line-height: 20px;
+  --c1-letter-spacing: 4px;
+  --c1-spacing: var(--p-spacing);
+
+  @include mq-up($mq-typography-large-min) {
+    --c1-font-size: 13px;
+    --c1-line-height: 20px;
+    --c1-letter-spacing: 3px;
+  }
+
+  .s-tg-c1 {
+    font-size: var(--c1-font-size);
+    line-height: var(--c1-line-height);
+    letter-spacing: var(--c1-letter-spacing);
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: var(--c1-spacing) 0;
   }
 }

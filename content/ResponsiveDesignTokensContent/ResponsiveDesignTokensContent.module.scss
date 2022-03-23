@@ -1,0 +1,39 @@
+@use "traits/Themeable/themeable" as *;
+
+.breakout {
+  margin: calc(0.5 * var(--layout-spacer-xl)) calc(-0.5 * var(--layout-spacer-xl));
+  padding: calc(0.5 * var(--layout-spacer-xl)) calc(0.5 * var(--layout-spacer-xl));
+  margin-left: calc(-1 * var(--layout-spacer-xl));
+  border-left: calc(0.5 * var(--layout-spacer-xl)) solid var(--shade-background);
+
+  > :first-child {
+    margin-top: 0;
+  }
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+.search {
+  display: flex;
+}
+
+.searchInput {
+  @include themeable-background-and-text();
+  flex-grow: 1;
+  font-family: inherit;
+  font-size: inherit;
+  appearance: none;
+  border: 1px solid var(--base-text-light);
+  border-radius: 9999px;
+  padding-top: var(--button-padding-top);
+  padding-bottom: var(--button-padding-bottom);
+  padding-left: calc(var(--button-nominal-height) / 2);
+  padding-right: calc(var(--button-nominal-height) * -1);
+  margin-right: calc(var(--button-nominal-height) * -1);
+
+  &::placeholder {
+    color: var(--base-text-light);
+  }
+}

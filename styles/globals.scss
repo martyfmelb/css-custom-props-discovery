@@ -1,17 +1,30 @@
 @use "modules/colours/css-custom-properties";
 @use "modules/btn";
 @use "modules/typography";
-@use "traits/Themeable/themeable";
+@use "traits/Themeable/themeable" as *;
 @use "modules/mq/selectors";
+@use "modules/spacing/selectors" as spacingSelectors;
 
 html,
 body {
-  background: var(--base-background);
-  color: var(--base-text);
+  @include themeable-background-and-text();
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li {
+  margin: 0;
 }
 
 a {
@@ -21,6 +34,37 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+.page-container {
+  padding: var(--layout-spacer-xl);
+  overflow: hidden;
+}
+
+.absorb-page-container-padding {
+  margin: calc(-1 * var(--layout-spacer-xl));
+  padding: var(--layout-spacer-xl);
+}
+
+.negate-page-container-padding {
+  margin: calc(-1 * var(--layout-spacer-xl));
+}
+
+.page-container-padding {
+  padding: var(--layout-spacer-xl);
+
+  &.-suppress-vertical {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  &.-suppress-top {
+    padding-top: 0;
+  }
+
+  &.-suppress-bottom {
+    padding-bottom: 0;
+  }
 }
 
 .th-shaded {

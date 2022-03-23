@@ -1,5 +1,13 @@
 .root {
-  > * + * {
-    margin-left: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  margin-left: calc(-1 * var(--pointer-spacer-md));
+  margin-top: calc(-1 * var(--pointer-spacer-md));
+
+  > * {
+    margin-left: var(--pointer-spacer-md);
+    margin-top: var(--pointer-spacer-md);
   }
 }

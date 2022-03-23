@@ -1,0 +1,27 @@
+@use "styles/modules/mq/mixins-and-functions" as *;
+
+:root {
+  --layout-spacer-basis: 8px;
+  --layout-spacer-xs: calc(var(--layout-spacer-basis) * 0.25);
+  --layout-spacer-sm: calc(var(--layout-spacer-basis) * 0.5);
+  --layout-spacer-md: calc(var(--layout-spacer-basis) * 1);
+  --layout-spacer-lg: calc(var(--layout-spacer-basis) * 2);
+  --layout-spacer-xl: calc(var(--layout-spacer-basis) * 4);
+  --layout-spacer-xxl: calc(var(--layout-spacer-basis) * 8);
+  --layout-spacer-xxxl: calc(var(--layout-spacer-basis) * 16);
+
+  --pointer-spacer-basis: 8px;
+  --pointer-spacer-xs: calc(var(--pointer-spacer-basis) * 0.25);
+  --pointer-spacer-sm: calc(var(--pointer-spacer-basis) * 0.5);
+  --pointer-spacer-md: calc(var(--pointer-spacer-basis) * 1);
+  --pointer-spacer-lg: calc(var(--pointer-spacer-basis) * 2);
+  --pointer-spacer-xl: calc(var(--pointer-spacer-basis) * 3);
+
+  @include mq-up(md) {
+    --layout-spacer-basis: 12px;
+  }
+
+  @media (pointer: coarse) {
+    --pointer-spacer-basis: 12px;
+  }
+}

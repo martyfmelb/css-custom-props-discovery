@@ -1,23 +1,28 @@
-:root {
-  --mineshaft: #1a1a1a;
-  --tundora: #404040;
-  --dove-gray: #888;
-  --silver: #ccc;
-  --black-haze: #f0f0f0;
-  --white: #fff;
-  --brand-primary: #eb0a1e;
-  --brand-primary-lighter: #f86370; // #{adjust-color(#eb0a1e, $lightness: 20%)};
-  --brand-primary-darker: #890612; // #{adjust-color(#eb0a1e, $lightness: -20%)};
-  --white-x-brand-primary: #f86370; // #{mix(#fff, #eb0a1e)};
+@use "./variables" as *;
 
-  --electric-mineshaft: #001a20;
-  --electric-tundora: #384058;
-  --electric-dove-gray: #78A;
-  --electric-silver: #bcd;
-  --electric-black-haze: #ebf0f4;
-  --electric-white: #fff;
-  --electric-brand-primary: #35b;
-  --electric-brand-primary-lighter: #7992db; // #{adjust-color(#35b, $lightness: 20%)};
-  --electric-brand-primary-darker: #1d316b; // #{adjust-color(#35b, $lightness: -20%)};
-  --electric-white-x-brand-primary: #99aadd; // #{mix(#fff, #35b)};
+:root {
+  --mineshaft: #{$mineshaft};
+  --tundora: #{$tundora};
+  --dove-gray: #{$dove-gray};
+  --silver: #{$silver};
+  --black-haze: #{$black-haze};
+  --white: #{$white};
+  --brand-primary: #{$brand-primary};
+  --brand-primary-lighter: #{$brand-primary-lighter};
+  --brand-primary-darker: #{$brand-primary-darker};
+  --white-x-brand-primary: #{$white-x-brand-primary};
+
+  --electric-mineshaft: #{$electric-mineshaft};
+  --electric-tundora: #{$electric-tundora};
+  --electric-dove-gray: #{$electric-dove-gray};
+  --electric-silver: #{$electric-silver};
+  --electric-black-haze: #{$electric-black-haze};
+  --electric-white: #{$electric-white};
+  --electric-brand-primary: #{$electric-brand-primary};
+  --electric-brand-primary-lighter: #{$electric-brand-primary-lighter};
+  --electric-brand-primary-darker: #{$electric-brand-primary-darker};
+  --electric-white-x-brand-primary: #{$electric-white-x-brand-primary};
+
+  --parallax-background-colour: #{rgba($electric-silver, 0.2)};
+  --section-3d-background: #{rgba($white, 0.75)};
 }
